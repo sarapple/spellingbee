@@ -1,6 +1,5 @@
 // require the controller to route url requests to
-var words 	= require('./../server/controllers/words.js'),
-    session = require('express-session');
+var words 	= require('./../server/controllers/words.js');
 
 module.exports = function Routes(app){
 	var response, stdcb;
