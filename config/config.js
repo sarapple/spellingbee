@@ -15,7 +15,7 @@ notifier     = {
 };
 module.exports = {			//self creates db
 	development: {				//set url for the db
-		db: 'mongodb://admin:H1H0H1H0@ds047315.mongolab.com:47315/heroku_t1fvnfwt',
+		db: 'mongodb://admino:admin@ds047315.mongolab.com:47315/heroku_t1fvnfwt',
 		root: rootPath,
 		notifier: notifier,
 		app: {
@@ -23,7 +23,7 @@ module.exports = {			//self creates db
 		}
 	},
 	test: {
-		db: 'mongodb://admin:H1H0H1H0@ds047315.mongolab.com:47315/heroku_t1fvnfwt',
+		db: 'mongodb://admino:admin@ds047315.mongolab.com:47315/heroku_t1fvnfwt',
 		root: rootPath,
 		notifier: notifier,
 		app:{
