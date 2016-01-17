@@ -18,13 +18,18 @@ module.exports = {
 	},
 
 	random: function(req,res,cb) {
+		console.log('in contorller');
+		console.log(Word);
 		Word.count().exec(function(err, count){
+			console.log('in owrd count');
 			var random;
 
 			random = Math.floor(Math.random() * count);
-
+			console.log(random);
 			Word.findOne().skip(random).exec(
 				function (err, result) {
+					console.log('find one');
+					console.log('in err');
 					if (err) return cb(err);
 
 					return cb(null, result);

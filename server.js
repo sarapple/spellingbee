@@ -22,11 +22,11 @@ _            = require('lodash');										// utility library
 app.use(bodyParser.urlencoded({ extended : true }));	// Use Bodyparser for post data
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(session({																		// Store session data
-	secret            : keys.session_secret,
-	saveUninitialized : true,
-	resave            : true
-}));
+// app.use(session({																		// Store session data
+// 	secret            : keys.session_secret,
+// 	saveUninitialized : true,
+// 	resave            : true
+// }));
 
 app.use(express.static(path.join(__dirname, 'public')));							// Serve js, css, and images
 app.use(express.static(path.join(__dirname, 'server/controllers')));
