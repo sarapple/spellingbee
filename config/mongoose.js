@@ -6,28 +6,18 @@ env      = process.env.NODE_ENV || 'development';	//set env to whatever is set i
 config   = require('./config')[env];							//whatever comes back from it, set it to env
 fs       = require('fs');
 uriUtil  = require('mongodb-uri');
-
-// Bootstrap db connection
-// Connect to mongodb
-connect  = function() {
-	var options, mongooseUri;
-
-	options = { server : { socketOptions : { keepAlive : 1 } } };
-	mongooseUri = uriUtil.formatMongoose(config.db);
-	console.log(mongooseUri);
-	mongoose.createConnection(mongooseUri);
-};
-connect();
-
-// Error Handler
-mongoose.connection.on('error', function(err) {
-	console.log(err);
-})
-
-//Reconnect when closed
-mongoose.connection.on('disconnected', function() {
-	connect();
-})
+var uristring =
+	process.env.MONGOLAB_URI ||
+	process.env.MONGOHQ_URL ||
+	'mongodb://localhost/words';
+	console.log(uristring);
+mongoose.connect(uristring, function (err, res) {
+	if (err) {
+		console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+	} else {
+		console.log ('Succeeded connected to: ' + uristring);
+	}
+});
 
 //Bootstrap-load the models equivalent of autoload
 models_path = __dirname + '/../server/models';
