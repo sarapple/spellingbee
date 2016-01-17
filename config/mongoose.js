@@ -14,7 +14,8 @@ connect  = function() {
 
 	options = { server : { socketOptions : { keepAlive : 1 } } };
 	mongooseUri = uriUtil.formatMongoose(config.db);
-	mongoose.connect(mongooseUri, options);
+	console.log(mongooseUri);
+	mongoose.createConnection(mongooseUri);
 };
 connect();
 
