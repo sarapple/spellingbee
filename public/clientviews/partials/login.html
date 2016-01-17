@@ -1,0 +1,13 @@
+<div id="login" ng-controller="appController">
+	<div><h1>Login page here</h1></div>
+	<div>
+		<form id="create-user">
+			<label>Username</label>
+			<input type="text" ng-model="username" name="username" />
+			<label>Password</label>
+			<input type="password" ng-model="password" name="password" />
+			<button ng-click="join()" class="join">Join</button>
+		</form>
+		<p ng-bind="notice.msg"></p>
+	</div>
+</div>
