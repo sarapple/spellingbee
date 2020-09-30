@@ -1,1 +1,1 @@
-# Spelling Bee API
+# An Awesome Spelling Bee API
